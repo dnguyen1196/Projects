@@ -1,0 +1,15 @@
+API
+
+
+Front end
+- Now I know that it can return the correct JSON value
+- Need for exception handling ("ERROR WITH POST DATA")
+- Use backbone VIEW object to render the movie info
+-> Use omdb api to generate request 
+-> retrieve movie info including plot + poster image
+
+
+* When the user makes a new request, clear all the current entry on the screen
+* Use backbone view/ model
+
+

@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+	<title>Movie Lens</title>
+	<link rel="stylesheet" href='{% static "bootstrap.min.css" %}'>
+	<link rel="stylesheet" href='{% static "simple-sidebar.css" %}'>
+	<link rel="stylesheet" href='{% static "front_end.css" %}'>
+
+	<script src='{% static "jquery-3.1.0.min.js" %}' type="text/javascript"></script>
+	<script src='{% static "underscore-min.js" %}' type="text/javascript"></script>
+	<script src='{% static "backbone-min.js" %}' type="text/javascript"></script>
+</head>
+
+<body>
+	<div class="page-header">
+		<h1>Movie Lens</h1>
+	</div>
+
+	<div id="wrapper" class="">
+		<div id="sidebar-wrapper">
+			<h1 class="sidebar_title"> Category </h1>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Action">Action</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Adventure">Adventure</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Animation">Animation</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Chilren's">Children's</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Comedy">Comedy</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Crime">Crime</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Documentary">Documentary</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Drama">Drama</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Fantasy">Fantasy</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Film-Noir">Film-Noir</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Horror">Horror</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Musical">Musical</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Mystery">Mystery</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Romance">Romance</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Sci-Fi">Sci-Fi</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Thriller">Thriller</label>
+			</div>	
+			<div class="checkbox">
+				<label><input type="checkbox" value="War">War</label>
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox" value="Western">Western</label>
+			</div>
+			<button type="button" class="btn btn-default" id="movie_search_request"> SEARCH MOVIES</button>
+
+
+			<!-- Build a recommender system based on the user choice -->
+		</div>
+
+		<!-- THIS IS WHERE ALL THE MOVIE INFO GETS DISPLAYED - THE MAIN CONTENT OF THE PAGE -->
+		<div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<a class="btn btn-default" id="menu-toggle">Search for Movie</a>
+					</div>
+				</div>
+
+				<div class="row">
+					<ul id="movie_list">
+						<!-- This is where movie info will be inserted -->
+
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+</body>
+<script src='{% static "front_end.js" %}' type="text/javascript"></script>
+</html>
