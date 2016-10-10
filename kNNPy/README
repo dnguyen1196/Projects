@@ -1,0 +1,36 @@
+Comp 135 HW1
+
+Name: Duc Nguyen (mnguye16)
+
+This is a python program that performs kNN classification. It will measure
+the accuracy of the classifier on a test data set by finding k nearest neighbors
+on the training data set.
+
+To run the program with a training data set and test data set, run the following
+in the command line
+
+python kNN.py -t <traing_data.arff> -T <test_data.arff>
+
+The program will produce two plots. 
+1/ Plot of accuracy of kNN against the number of nearest neighbors k
+2/ Plot of accuracy of kNN against the number of features used in calculating
+Euclidean distance
+
+In both plots, the horizontal line is the accuracy obtained by J48 algorithm
+This accuracy has been recorded by running J48 algorithm on the data sets
+
+$ java weka.classifiers.trees.J48 -t <train_data.arff> -T <test_data.arff>
+
+and record the result in the .txt files (listed in this folder)
+To run the python program on all the given data set, use the following 
+series of command
+
+$ python kNN.py -t ionosphere_train.arff -T ionosphere_test.arff
+$ python kNN.py -t mfeat-fourier_train.arff -T mfeat-fourier_test.arff
+$ python kNN.py -t irrelevant_train.arff -T irrelevant_test.arff
+$ python kNN.py -t spambase_train.arff -T spambase_test.arff
+
+At the end, the program will reproduce 8 plots
+
+Alternatively, you can run the script runkNN by
+$ sh runkNN

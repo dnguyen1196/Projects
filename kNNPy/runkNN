@@ -1,0 +1,5 @@
+#!/bin/bash
+python kNN.py -t ionosphere_train.arff -T ionosphere_test.arff
+python kNN.py -t mfeat-fourier_train.arff -T mfeat-fourier_test.arff
+python kNN.py -t irrelevant_train.arff -T irrelevant_test.arff
+python kNN.py -t spambase_train.arff -T spambase_test.arff
