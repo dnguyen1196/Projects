@@ -1,2 +1,2 @@
 #!/bin/bash
-./env/bin/python3 index.py "$@"
+./env/bin/python index.py "$@"

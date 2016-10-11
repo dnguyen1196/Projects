@@ -1,3 +1,9 @@
+import quandl
+import numpy
+import pandas
+import threading
+
+quandl.ApiConfig.api_key = 'wvMUzzkjBgybjKKuPZVK'
 
 # Use kadane's algorithm
 # Convert the array into an array of differences
@@ -16,8 +22,6 @@ def optimal_short_find(arr):
     return (start, end+1, total)
 
 def max_subsequence_find(arr):
-    # We try to find the longest contiguous sum with a positive value
-    # Stop and reset when this sum < 0 (when we know it's decreasing)
     best_start = 0
     best_end = 0
     best_sum = 0
@@ -58,3 +62,34 @@ def min_subsequence_find(arr):
             best_sum = cur_sum
             best_end = i
     return (best_start, best_end, best_sum)
+
+
+# Function to perform find the best short/ long stategy for a specific
+# stock
+# Takes in (name, date start, date end)
+# Returns best short strategy + best long strategy
+def optimal_long_simple_find(stock, start, end):
+    try:
+        data = quandl.get(stock, start_date=start, end_date=end, collapse="daily")
+        prices = data.as_matrix(['Adj. Close'])
+        dates = data.index.values
+        (start, end, total) = optimal_long_find(prices)
+        return (dates[start], dates[end], total)
+    except Exception as e:
+        print ("Wrong stock name: ", e)
+        pass
+
+# Create a function that takes in a series of stock name and concurrently
+# Run the getting data + analysis
+
+def optimize_simple_portfolio(portfolio, time):
+    threads = []
+    try:
+        for name in portfolio:
+            stock = "WIKI/" + name
+            opt = threading.Thread(target=optimal_long_simple_find, args=(stock, "2013-01-01", "2014-12-31"))
+            threads.append(opt)
+        for opt in threads:
+            opt.start()
+    except Exception as e:
+        print ("Exception: ", e)
