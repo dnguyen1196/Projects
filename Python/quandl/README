@@ -1,0 +1,52 @@
+###
+A python program that uses concepts in linear programming???
+
+Given some time frame, initial money, stocks that the users are interested
+in -> how to divide the money such that this generates the highest return
+
+Is this as simple as finding max T * ∆s/s (for every subsequence, we note
+the ratio of the starting value and the change -> upsize potential)
+
+Where ∆s is the maximum subsequence difference within the time frame which
+can be found in O(n)
+
+Also can short sell some stocks. This is the reverse of finding maximum sub sequence
+problem where we are actually finding the subsequence of minimum change
+
+Is this correct? If this is definitely correct, it's just problem of implement it
+
+
+###
+Another expansion of the problem could be given the investors already have
+a number of stocks invested in some company, how to maximize his return
+investment within some given period -> either short or long
+
+Is it equivalent to selling all his stocks to invest in the best performing stock?
+
+However, selling different stocks at different time might bring in different
+return. For example, if stock A is the best, B is second best, selling B at
+a later time can be used to buy more A -> may be higher return in the future
+
+###
+Extension
+What if some stocks incur transaction costs assume 2% -> harder to achieve
+
+### Simulate high frequency trading with some transaction costs (say 0.5% of the transaction volume)
+
+(Greedy algorithm, but this incur some transaction costs)
+-> we try to find the best way to increase return on a daily basis (if the price increase
+, buy it in the morning)
+-> If the price decreases, short it
+
+Assuming we are starting with some fixed income and interest in several stocks
+How to leverage the short/sell method such that we get the highest return
+within the specified period
+
+###
+Correlation between two data sets of financial data between two companies?
+Clustering between two time series data sets, find the correlation among
+the different stock prices? Which companies are likely to move in tandem?
+
+###
+Create a python daemon in the tufts server that receives HTTP request and
+performs all these data analysis?
