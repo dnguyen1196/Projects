@@ -1,12 +1,15 @@
 import sys
-from simple_find import *
-
+import SimpleFind.simple_find as sf
 
 def main(argv):
-    # For each company in the command line -> create a thread that gets the
-    # stock data and perform optimization
-    optimize_simple_portfolio(argv, 0)
+    portfolio = ["GOOGL", "FB", "TSLA"]
+    start = "2013-01-01"
+    end = "2015-12-31"
 
+    results = sf.strategize_simple_find(portfolio, start, end)
+    while not results.empty():
+        result = results.get()
+        print (result[0], result[4])
 
 if __name__ == "__main__":
    main(sys.argv[1:])

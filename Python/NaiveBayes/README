@@ -1,1 +1,7 @@
+- Produce the learning curve on the two data sets with and without Laplace
+smoothing -> produce 8 graphs in total
+- Evaluate the performance as a function of m -> produce 4 plots in total?
+It is useful to actually produce only 2 plots
+(2 different algorithms on the same data set with varying m)
 
+- Run the plot against m = 0, 0.1, 0.2,.. 0.9 and 1, 2, ..., 10
